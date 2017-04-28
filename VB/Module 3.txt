@@ -1,0 +1,58 @@
+
+Module Module1
+
+    Sub Main()
+        Dim ford(8) As Decimal
+        Dim chevy(8) As Decimal
+        Dim time As Decimal = 0
+        Dim totalFord As Decimal
+        Dim totalChevy As Decimal
+        Dim count As Integer = 0
+
+
+
+
+        Console.WriteLine("Welcome to Fast and Furious drag racing")
+        For time = 0 To 7
+            Console.Write("Enter Chevy Drag Time For Car " & (time + 1) & ": ")
+            chevy(time) = Console.ReadLine()
+            totalChevy = totalChevy + chevy(time)
+
+        Next
+      
+        For time = 0 To 7
+            Console.Write("Enter Ford Drag Time For Car " & (time + 1) & ": ")
+            ford(time) = Console.ReadLine()
+            totalFord = totalFord + ford(time)
+        Next
+  
+
+        For time = 0 To 7
+            If chevy(time) < ford(time) Then
+
+                Console.WriteLine("Chevy by " & chevy(time))
+            ElseIf ford(time) < chevy(time) Then
+
+                Console.WriteLine("Ford by " & ford(time))
+            Else
+                Console.WriteLine("Tie!")
+
+            End If
+
+        Next
+        If totalChevy < totalFord Then
+            Console.Write("Winner is Chevy!")
+        ElseIf totalFord < totalChevy Then
+            Console.Write("Winner is Ford!")
+        Else
+            Console.Write("Its a Tie!")
+        End If
+
+
+
+
+
+        Console.ReadLine()
+    End Sub
+
+End Module

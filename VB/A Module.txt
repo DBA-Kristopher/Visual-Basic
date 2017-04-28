@@ -1,0 +1,59 @@
+
+Module Module1
+
+    Sub Main()
+        Dim customerType As String
+        Const commercial = 0.5
+        Const industrialLow = 0.65
+        Const industrialMid = 0.55
+        Const industrialHigh = 0.5
+        Const residentialHigh = 0.75
+        Const residentialLow = 0.85
+        Dim unitsoUtility As Decimal
+        Dim total As Decimal
+        Console.WriteLine("Enter the customer type you repersent. Choose from Residental, Industrial, or Commercial.")
+        customerType = Console.ReadLine()
+        While customerType <> "Residental" And customerType <> "residental" And customerType <> "industrial" And customerType <> "Industrial" And customerType <> "Commercial" And customerType <> "commercial"
+            Console.WriteLine("Invaliade data entered, Please Enter data again.")
+            customerType = Console.ReadLine()
+
+        End While
+        Console.WriteLine("Enter the units of Utilities")
+        unitsoUtility = Console.ReadLine()
+        While unitsoUtility < 0
+            Console.WriteLine("Please enter a positive number")
+            unitsoUtility = Console.ReadLine
+
+        End While
+
+
+
+        If customerType = "Residental" Or customerType = "residental" And unitsoUtility >= 500 Then
+            total = residentialHigh * unitsoUtility
+        ElseIf customerType = "Residental" Or customerType = "residental" And unitsoUtility < 500 Then
+            total = residentialLow * unitsoUtility
+        ElseIf customerType = "Industrial" Or customerType = "industrial" And unitsoUtility > 2000 Then
+            total = industrialHigh * unitsoUtility
+        ElseIf customerType = "Industrial" Or customerType = "industrial" And unitsoUtility >= 800 And unitsoUtility <= 2000 Then
+            total = industrialMid * unitsoUtility
+        ElseIf customerType = "Industrial" Or customerType = "industrial" And unitsoUtility < 800 Then
+            total = industrialLow * unitsoUtility
+        ElseIf customerType = "Commercial" Or customerType = "commercial" Then
+            total = commercial * unitsoUtility
+        Else
+            Console.WriteLine("Invaliade data entered, Please Enter data again.")
+
+        End If
+        Console.WriteLine("Customer Type: " & customerType.ToString)
+        Console.WriteLine("Units Consumed: " & unitsoUtility)
+        Console.WriteLine("Total Cost: " & total)
+
+
+
+
+        Console.ReadLine()
+
+    End Sub
+
+End Module
+

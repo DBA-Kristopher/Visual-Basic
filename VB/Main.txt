@@ -1,0 +1,37 @@
+Sub Main()
+        Dim scores(5) As Double
+        Dim averageScores As Double
+        Dim totalScore As Double
+        Dim count As Integer = 0
+
+        Console.WriteLine("Please enter the 5 scores: ")
+        For count = 0 To 4
+            Console.Write("Enter score " & (count + 1) & ": ")
+            scores(count) = Console.ReadLine
+            totalScore = totalScore + scores(count)
+
+        Next
+        Console.WriteLine("Values in order")
+        For count = 0 To 4
+            Console.WriteLine("Score " & (count + 1) & " is " & scores(count))
+        Next
+        Console.WriteLine("Values in reverse order")
+        For count = 4 To 0 Step -1
+            Console.WriteLine("Score " & (count + 1) & " is " & scores(count))
+        Next
+        averageScores = totalScore / 5
+        Console.WriteLine("Average score is " & averageScores)
+        For count = 0 To 4
+            If scores(count) > averageScores Then
+                Console.WriteLine("Score " & (count + 1) & " are " & scores(count) & " and is above average.")
+
+            End If
+        Next
+
+
+
+
+        Console.ReadLine()
+    End Sub
+
+

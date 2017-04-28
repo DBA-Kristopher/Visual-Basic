@@ -1,0 +1,51 @@
+
+Module Module1
+
+    Sub Main()
+
+        Dim payRate As Decimal
+        Dim hours As Decimal
+        Dim marritalStatus As String
+        Dim netPay As Decimal
+        Dim grossPay As Decimal
+        Dim overTime As Decimal
+        Dim taxRate As Decimal
+        Dim taxTotal As Decimal
+
+        Console.Write("Please enter your rate of pay: ")
+        payRate = Console.ReadLine()
+        Console.Write("Please enter your hours worked: ")
+        hours = Console.ReadLine()
+        Console.WriteLine("Please enter marrital status using  S for single, M for married, D for divorced, or W for widowed")
+        marritalStatus = Console.ReadLine
+
+        If marritalStatus = "m" Then
+            taxRate = 0.15
+        ElseIf marritalStatus = "s" Then
+            taxRate = 0.22
+        ElseIf marritalStatus = "d" Then
+            taxRate = 0.23
+        ElseIf marritalStatus = "w" Then
+            taxRate = 0.13
+        Else
+            Console.WriteLine("Invalid letter entered. Please enter a letter m, d, s, or w.")
+
+        End If
+        If hours > 40 Then
+            overTime = (hours - 40) * payRate * 1.5
+        End If
+        grossPay = overTime + (payRate * hours)
+        taxTotal = taxRate * grossPay
+        netPay = grossPay - taxTotal
+
+        Console.WriteLine("Your over time pay is: " & overTime)
+        Console.WriteLine("Gross pay is: " & grossPay)
+        Console.WriteLine("Taxes removed: " & taxTotal)
+        Console.WriteLine("Net pay is: " & netPay.ToString("C"))
+
+        Console.ReadLine()
+    End Sub
+
+End Module
+
+

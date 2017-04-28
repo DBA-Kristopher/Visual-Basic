@@ -1,0 +1,54 @@
+Module Module1
+    Function ComputeTotal(quantity As Double, unitPrice As Double) As Double
+        Dim totalSales As Double = 0
+        totalSales = quantity * unitPrice
+        Return totalSales
+    End Function
+
+
+    Function ComputeTax(totalSales As Double, state As String) As Double
+        Dim tax As Double = 0
+        If state = "NJ" Then
+            tax = totalSales * 0.07
+        ElseIf state = "FL" Then
+            Tax = totalSales * 0.06
+        ElseIf state = "NY" Then
+            Tax = totalSales * 0.04
+        End If
+        Return tax
+    End Function
+
+    Sub Main()
+
+        Dim name, state As String
+        Dim itemsSold, unitPrice, total, yourTotal, tax As Double
+
+
+        Console.Write("Welcome. Please enter your name:  ")
+        name = Console.ReadLine()
+        Console.Write("Enter NY, FL, or NJ for state:  ")
+        state = Console.ReadLine
+        While state <> "NY" And state <> "FL" And state <> "NJ"
+            Console.WriteLine(" Invalid state entered. Please enter NJ, NY, or FL for state. ")
+            State = Console.ReadLine
+        End While
+        Console.Write("Enter in for the number of items sold:   ")
+        itemsSold = Console.ReadLine()
+        Console.Write("Enter the unit price of the item:  ")
+        unitPrice = Console.ReadLine()
+        total = ComputeTotal(itemsSold, unitPrice)
+
+        tax = ComputeTax(total, state)
+
+        yourTotal = tax + total
+        Console.WriteLine("The total sales for " & name & " are " & total.ToString("C"))
+        Console.WriteLine("The tax amount is " & tax.ToString("C"))
+        Console.WriteLine("The total with taxes is " & yourTotal.ToString("C"))
+
+        Console.ReadLine()
+
+
+    End Sub
+
+End Module
+

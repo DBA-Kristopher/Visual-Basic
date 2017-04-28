@@ -1,0 +1,52 @@
+
+    Sub Main()
+        Dim subTotal As Decimal
+        Dim disCount As Decimal
+        Dim total As Decimal
+        Dim itemCount As Integer
+        Dim itemPrice As Integer
+        Dim totalDiscount As Decimal
+        Do
+
+
+            Console.WriteLine("Enter the purchase price of the item, enter -1 to quit")
+            itemPrice = Console.ReadLine()
+            subTotal = subTotal + itemPrice
+            total = subTotal - disCount
+
+
+            If itemPrice <> -1 Then
+                If itemPrice >= 50 Then
+                    disCount = itemPrice * 0.1
+                    totalDiscount = totalDiscount + disCount
+                Else
+                    disCount = 0
+
+
+
+                End If
+
+
+                Console.WriteLine("Item Price: " & itemPrice.ToString("C") & "  Discount : " & disCount.ToString("C"))
+                itemCount = itemCount + 1
+            End If
+
+        Loop Until itemPrice = -1
+
+
+
+
+        Console.WriteLine("Subtotal: " & subTotal.ToString("C"))
+        Console.WriteLine("Discount: " & totalDiscount.ToString("C"))
+        Console.WriteLine("Total: " & total.ToString("C"))
+        Console.WriteLine(" Number of items: " & itemCount)
+        Console.WriteLine("Thank for Shopping with us.")
+
+
+        Console.ReadLine()
+
+
+    End Sub
+
+End Module
+

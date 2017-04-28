@@ -1,0 +1,28 @@
+Module Module1
+
+    Sub Main()
+        Dim weightPacel As Decimal
+        Const costPacellow As Decimal = 3.5
+        Const costPacelmid As Decimal = 2.85
+        Const costPacelhigh As Decimal = 2.45
+        Dim totalcost As Decimal
+
+        Console.Write("Please enter the weight of a parcel: ")
+        weightPacel = Console.ReadLine()
+
+        If weightPacel < 2.5 Then
+            totalcost = weightPacel * costPacellow
+        ElseIf weightPacel >= 2.5 And weightPacel <= 5 Then
+            totalcost = weightPacel * costPacelmid
+        ElseIf weightPacel > 5 Then
+            totalcost = weightPacel * costPacelhigh
+        ElseIf weightPacel < 0 Then
+            Console.WriteLine("Invalid Weight entered.")
+
+        End If
+        Console.WriteLine("Total cost is: " & totalcost)
+
+        Console.ReadLine()
+    End Sub
+
+End Module

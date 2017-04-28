@@ -1,0 +1,37 @@
+Module Module1
+    Function ConvertMilesToKilometers(nom As Decimal) As Decimal
+        Dim number As Decimal
+        number = nom / 0.62137
+        Return number
+
+    End Function
+
+    Function ConvertKilometersToMiles(nok As Decimal) As Decimal
+        Dim number As Decimal
+        number = nok * 0.62137
+        Return number
+    End Function
+    Sub Main()
+        Dim distanceType As String
+        Dim distance As Decimal
+        Dim number As Decimal
+        Console.Write("Do you want to convert to Miles or Kilometers? (M or K): ")
+        distanceType = Console.ReadLine
+        If distanceType = "M" Then
+            Console.WriteLine("Enter number of Miles: ")
+            distance = Console.ReadLine()
+            number = ConvertMilesToKilometers(distance)
+            Console.WriteLine(distance & " miles equals " & number & " kilometers.")
+        ElseIf distanceType = "K" Then
+            Console.WriteLine("Enter number of Kilometers: ")
+            distance = Console.ReadLine()
+            number = ConvertKilometersToMiles(distance)
+            Console.WriteLine(distance & " Kilometers equals " & number & " miles.")
+
+
+        End If
+
+        Console.ReadLine()
+    End Sub
+
+End Module

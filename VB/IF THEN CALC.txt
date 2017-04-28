@@ -1,0 +1,42 @@
+Module Module1
+
+    Sub Main()
+        Dim monthNumber As Integer
+
+        Console.WriteLine("Please enter a number 1-12 for month. ")
+        monthNumber = Console.ReadLine()
+        If monthNumber = 1 Then
+            Console.WriteLine("Januaray, This is the 1st month")
+        ElseIf monthNumber = 2 Then
+            Console.WriteLine("Febuaray, This is the 2nd month")
+        ElseIf monthNumber = 3 Then
+            Console.WriteLine("March, This is the 3rd month")
+        ElseIf monthNumber = 4 Then
+            Console.WriteLine("April, This is the 4th month")
+        ElseIf monthNumber = 5 Then
+            Console.WriteLine("May, This is the 5th month")
+        ElseIf monthNumber = 6 Then
+            Console.WriteLine("June, This is the 6th month")
+        ElseIf monthNumber = 7 Then
+            Console.WriteLine("July, This is the 7th month")
+        ElseIf monthNumber = 8 Then
+            Console.WriteLine("August, This is the 8th month")
+        ElseIf monthNumber = 9 Then
+            Console.WriteLine("September, This is the 9th month")
+        ElseIf monthNumber = 10 Then
+            Console.WriteLine("October, This is the 10th month")
+        ElseIf monthNumber = 11 Then
+            Console.WriteLine("November, this is the 11th month")
+        ElseIf monthNumber = 12 Then
+            Console.WriteLine("December, This is the 12th month")
+        Else
+            Console.WriteLine("Invalid number entered. Please enter a number 1-12")
+        End If
+
+
+        Console.ReadLine()
+
+    End Sub
+
+End Module
+

@@ -1,0 +1,48 @@
+
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("This program will help you calculate your students grades.")
+
+        Dim firstName As String
+        Dim lastName As String
+        Dim pointsEarned As Decimal
+        Dim finalGrade As String
+        Dim percentage As Decimal
+
+        Console.Write("Please Enter Students First name:  ")
+        firstName = Console.ReadLine()
+        Console.Write("Please Enter Students Last name:  ")
+        lastName = Console.ReadLine()
+        Console.Write("Please Enter number of points earned from 0-1000:  ")
+        pointsEarned = Console.ReadLine()
+
+        If pointsEarned >= 0 And pointsEarned <= 1000 Then
+            Console.WriteLine("Good Score")
+        Else
+            Console.WriteLine("Invaliad score entered.")
+
+
+        End If
+
+        percentage = pointsEarned / 1000
+        If pointsEarned >= 900 And pointsEarned <= 1000 Then
+            finalGrade = "A"
+        ElseIf pointsEarned >= 800 And pointsEarned <= 890 Then
+            finalGrade = "B"
+        ElseIf pointsEarned >= 700 And pointsEarned <= 790 Then
+            finalGrade = "C"
+        ElseIf pointsEarned >= 600 And pointsEarned <= 690 Then
+            finalGrade = "D"
+        ElseIf pointsEarned >= 0 And pointsEarned <= 590 Then
+            finalGrade = "F"
+        End If
+        Console.WriteLine("Here are the grades for " & firstName & lastName)
+        Console.WriteLine("Points earned: " & pointsEarned)
+        Console.WriteLine("Percent: " & percentage.ToString("P"))
+        Console.Write("Letter Grade: " & finalGrade)
+        Console.ReadLine()
+
+    End Sub
+
+End Module
